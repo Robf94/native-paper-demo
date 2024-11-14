@@ -1,7 +1,8 @@
 import globalStyles from "../styles/GlobalStyles";
 import * as React from "react";
 import { ScrollView, View } from "react-native";
-import { Text, Button, Avatar, Card, Appbar, useTheme } from "react-native-paper";
+import { Surface, Text, Button, Avatar, Card, Appbar, useTheme } from "react-native-paper";
+import ThemedText from "../themes/ThemedText";
 
 const LeftContent = (props) => (
   <Avatar.Icon
@@ -11,13 +12,21 @@ const LeftContent = (props) => (
 );
 
 function HomeScreen() {
-  const theme = useTheme();
-  console.log(theme);
+  // const { colors, elevation } = useTheme();
+
   return (
     <>
-      <Appbar.Header>
+      <Appbar.Header
+        style={[
+          globalStyles.appbar,
+          // { backgroundColor: colors.primary }
+        ]}
+      >
         <Appbar.BackAction onPress={() => {}} />
-        <Appbar.Content title="Appbar" />
+        <Appbar.Content
+          title="Appbar"
+          // titleStyle={{ color: colors.text }}
+        />
         <Appbar.Action
           icon="calendar"
           onPress={() => {}}
@@ -28,27 +37,32 @@ function HomeScreen() {
         />
       </Appbar.Header>
 
-      <ScrollView style={{ backgroundColor: theme.colors.secondary }}>
-        <View style={globalStyles.container}>
-          <Text variant="displayLarge">Display Large</Text>
-          <Text variant="displayMedium">Display Medium</Text>
-          <Text variant="displaySmall">Display small</Text>
+      <ScrollView>
+        <View
+          style={[
+            globalStyles.container,
+            // { backgroundColor: colors.background }
+          ]}
+        >
+          <ThemedText variant="displayLarge">Display Large</ThemedText>
+          <ThemedText variant="displayMedium">Display Medium</ThemedText>
+          <ThemedText variant="displaySmall">Display small</ThemedText>
 
-          <Text variant="headlineLarge">Headline Large</Text>
-          <Text variant="headlineMedium">Headline Medium</Text>
-          <Text variant="headlineSmall">Headline Small</Text>
+          <ThemedText variant="headlineLarge">Headline Large</ThemedText>
+          <ThemedText variant="headlineMedium">Headline Medium</ThemedText>
+          <ThemedText variant="headlineSmall">Headline Small</ThemedText>
 
-          <Text variant="titleLarge">Title Large</Text>
-          <Text variant="titleMedium">Title Medium</Text>
-          <Text variant="titleSmall">Title Small</Text>
+          <ThemedText variant="titleLarge">Title Large</ThemedText>
+          <ThemedText variant="titleMedium">Title Medium</ThemedText>
+          <ThemedText variant="titleSmall">Title Small</ThemedText>
 
-          <Text variant="bodyLarge">Body Large</Text>
-          <Text variant="bodyMedium">Body Medium</Text>
-          <Text variant="bodySmall">Body Small</Text>
+          <ThemedText variant="bodyLarge">Body Large</ThemedText>
+          <ThemedText variant="bodyMedium">Body Medium</ThemedText>
+          <ThemedText variant="bodySmall">Body Small</ThemedText>
 
-          <Text variant="labelLarge">Label Large</Text>
-          <Text variant="labelMedium">Label Medium</Text>
-          <Text variant="labelSmall">Label Small</Text>
+          <ThemedText variant="labelLarge">Label Large</ThemedText>
+          <ThemedText variant="labelMedium">Label Medium</ThemedText>
+          <ThemedText variant="labelSmall">Label Small</ThemedText>
 
           <Button
             icon="french-fries"
@@ -58,15 +72,15 @@ function HomeScreen() {
             Press me
           </Button>
 
-          <Card style={globalStyles["width-100"]}>
+          <Card elevation={5}>
             <Card.Title
               title="Card Title"
               subtitle="Card Subtitle"
               left={LeftContent}
             />
             <Card.Content>
-              <Text variant="titleLarge">Card title</Text>
-              <Text variant="bodyMedium">Card content</Text>
+              <ThemedText variant="titleLarge">Card title</ThemedText>
+              <ThemedText variant="bodyMedium">Card content</ThemedText>
             </Card.Content>
             <Card.Cover source={{ uri: "https://picsum.photos/700" }} />
             <Card.Actions>
