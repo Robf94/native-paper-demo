@@ -5,7 +5,6 @@ import App from "./App";
 
 export default function Main() {
   return (
-    // <PaperProvider theme={darkTheme}>
     <PaperProvider>
       <App />
     </PaperProvider>
