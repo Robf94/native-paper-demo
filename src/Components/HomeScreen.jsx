@@ -21,7 +21,7 @@ function HomeScreen() {
       <HeaderDemo />
 
       <ScrollView>
-        <View style={{gap: "20px"}}>
+        <View style={[{gap: 20}, {padding: 10}]}>
           <SearchBarDemo />
           <TextDemo />
           <ButtonDemo />
