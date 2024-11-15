@@ -12,7 +12,7 @@ function HeaderDemo() {
       >
         <Appbar.BackAction onPress={() => {}} />
         <Appbar.Content
-          title="Appbar"
+          title="Bin App Design Guide"
           // titleStyle={{ color: colors.text }}
         />
         <Appbar.Action
