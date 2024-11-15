@@ -1,4 +1,4 @@
-import { Appbar } from "react-native-paper";
+import { Appbar, IconButton, Tooltip } from "react-native-paper";
 import globalStyles from "../styles/GlobalStyles";
 
 function HeaderDemo() {
@@ -15,14 +15,18 @@ function HeaderDemo() {
           title="Bin App Design Guide"
           // titleStyle={{ color: colors.text }}
         />
-        <Appbar.Action
-          icon="calendar"
-          onPress={() => {}}
-        />
-        <Appbar.Action
-          icon="magnify"
-          onPress={() => {}}
-        />
+        <Tooltip title="Streak">
+          <Appbar.Action
+            icon="trending-up"
+            onPress={() => {}}
+          />
+        </Tooltip>
+        <Tooltip title="XP">
+          <Appbar.Action
+            icon="one-up"
+            onPress={() => {}}
+          />
+        </Tooltip>
       </Appbar.Header>
     </>
   );
